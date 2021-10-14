@@ -1,8 +1,10 @@
 import React from "react";
+import { MyPosts } from "./MyPosts/MyPosts";
+import styles from './Profile.module.css'
 
-export const Content = () => {
+export const Profile = () => {
   return (
-    <div className="content">
+    <div className={styles.content}>
       <div>
         <div>
           <img
@@ -10,11 +12,10 @@ export const Content = () => {
             alt=""
           />
         </div>
-        <div>avatar + name desc</div>
-        <div>My posts</div>
-        <div>New post</div>
-        <div>post1</div>
-        <div>Post 2</div>
+        <div>
+          ava + description
+        </div>
+        <MyPosts />
       </div>
     </div>
   );
