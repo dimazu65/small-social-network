@@ -13,7 +13,7 @@ export const MyPosts = () => {
       <textarea></textarea>
       <button>Add post</button>
       <button>Remove post</button>
-        <Post />
+        <Post message='Privet!' like = '15' />
       </div>   
     </div>
     
