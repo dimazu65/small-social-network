@@ -2,19 +2,36 @@ import React from "react";
 import styles from './MyPosts.module.css'
 import { Post } from "./Post/Post";
 
-export const MyPosts = () => {
+ 
+export const MyPosts = (props) => {
+ 
+let postElement = props.posts.map ((p) =>
+  {
+    return(
+    <Post id={p.id} message={p.message} like = {p.likeCount} />)
+  })
+
+
+  
   return (
-    <div>
+    <div className={styles.postsBlock}>
       MyPosts
       <div>
-        New Post
+        <h3>New Post</h3>
       </div>
       <div className={styles.posts}>
-      <textarea></textarea>
-      <button>Add post</button>
+      <div>
+        <textarea></textarea>
+      </div>  
+      <div>
+         <button>Add post</button>
       <button>Remove post</button>
-        <Post message='Privet!' like = '15' />
-      </div>   
+      </div>
+      <div className={styles.post}>
+        {postElement}
+        </div>  
+         
+      </div>
     </div>
     
   );
