@@ -10,8 +10,14 @@ let postElement = props.posts.map ((p) =>
     return(
     <Post id={p.id} message={p.message} like = {p.likeCount} />)
   })
+  
+  let newPostElement = React.createRef();
 
-
+  let addPost = ()=>{
+     let text = newPostElement.current.value;
+     props.addPost(text)
+     newPostElement.current.value = ''
+  }
   
   return (
     <div className={styles.postsBlock}>
@@ -21,10 +27,12 @@ let postElement = props.posts.map ((p) =>
       </div>
       <div className={styles.posts}>
       <div>
-        <textarea></textarea>
+        <textarea ref={newPostElement}>
+
+        </textarea>
       </div>  
       <div>
-         <button>Add post</button>
+         <button onClick={addPost}>Add post</button>
       <button>Remove post</button>
       </div>
       <div className={styles.post}>
