@@ -7,7 +7,7 @@ export const Post = (props) => {
       <div className={styles.item}>
         <img
           className={styles.img}
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMNYg4cHI3pB4clChf7c2o9ilmJXFP1fn9tA&usqp=CAU"
+          src="https://www.w3schools.com/howto/img_avatar.png"
           alt=""
         />
         {props.message}

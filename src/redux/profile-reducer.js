@@ -16,6 +16,7 @@ export const profileReducer = (state = initialState, action) => {
         message: state.newPostText,
         likeCount: 0,
       };
+      
       state.posts.push(newPost);
       state.newPostText = "";
       return state;

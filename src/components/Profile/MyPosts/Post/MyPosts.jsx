@@ -4,20 +4,21 @@ import { Post } from "./Post/Post";
  
 export const MyPosts = (props) => {
  
-let postElement = props.posts.map ((p) =>{
+let postElement = props.posts.map ((p) =>
+  {
     return(
     <Post id={p.id} message={p.message} like = {p.likeCount} />)
   })
   
   let newPostElement = React.createRef();
 
-  let onAddPost = () => {
+  let addPost = () => {
       props.addPost();
   };
 
   let onPostChange = () => {
-    let text = newPostElement.current.value;
-    props.updateNewPostText( text )
+    let newText = newPostElement.current.value;
+    props.updateNewPostText( newText )
   };
 
 
@@ -36,7 +37,7 @@ let postElement = props.posts.map ((p) =>{
         
       </div>  
       <div>
-         <button onClick={onAddPost}>Add post</button>
+         <button onClick={addPost}>Add post</button>
       
       </div>
       <div className={styles.post}>
